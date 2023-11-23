@@ -25,14 +25,18 @@ public class SnakeLadder{
 		System.out.println("Welcome to the Snakes and Ladders Game");
 		int START_POS = 0;
 		
+		int numDiceThrows = 0;
 		while(currPos < 100){
 			int diceNum = (int) (Math.ceil(Math.random()*10) % 6)+1;
+			numDiceThrows++;
 			playersMove(diceNum);
 			if(currPos > 100){
 				currPos -= diceNum;
 			}
+			System.out.println("Player at : " + currPos);
 		}
-		
+		System.out.println("Total number of times dice was thrown : " + numDiceThrows);
+		System.out.println("Player won!!");
 	}
 
 }
