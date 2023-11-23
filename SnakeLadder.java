@@ -28,6 +28,9 @@ public class SnakeLadder{
 		while(currPos < 100){
 			int diceNum = (int) (Math.ceil(Math.random()*10) % 6)+1;
 			playersMove(diceNum);
+			if(currPos > 100){
+				currPos -= diceNum;
+			}
 		}
 		
 	}
