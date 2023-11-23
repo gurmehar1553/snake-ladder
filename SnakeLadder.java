@@ -14,18 +14,22 @@ public class SnakeLadder{
 			case 2:
 				currPos -= diceNum;
 				System.out.println("Snake");
+				if(currPos < 0) currPos = 0;
 				break;
 			default:
 				System.out.println("No move");
 		}
-	}
-	
+	}	
+
 	public static void main(String[] args){
 		System.out.println("Welcome to the Snakes and Ladders Game");
 		int START_POS = 0;
 		
-		int diceNum = (int) (Math.ceil(Math.random()*10) % 6)+1;
-		playersMove(diceNum);
+		while(currPos < 100){
+			int diceNum = (int) (Math.ceil(Math.random()*10) % 6)+1;
+			playersMove(diceNum);
+		}
+		
 	}
 
 }
