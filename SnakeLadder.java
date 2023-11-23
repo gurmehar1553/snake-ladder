@@ -1,12 +1,31 @@
 import java.util.*;
 
 public class SnakeLadder{
+	public static int currPos = 0;
+
+	public static void playersMove(int diceNum){
+
+		int checkPossibility = (int)Math.floor(Math.random()*10)%2 +1;
+		switch(checkPossibility){
+			case 1:
+				currPos += diceNum;
+				System.out.println("Ladder");
+				break;
+			case 2:
+				currPos -= diceNum;
+				System.out.println("Snake");
+				break;
+			default:
+				System.out.println("No move");
+		}
+	}
+	
 	public static void main(String[] args){
-		System.out.println("Welcome");
+		System.out.println("Welcome to the Snakes and Ladders Game");
 		int START_POS = 0;
 		
 		int diceNum = (int) (Math.ceil(Math.random()*10) % 6)+1;
-		System.out.println(diceNum);
+		playersMove(diceNum);
 	}
 
 }
